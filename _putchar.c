@@ -1,13 +1,18 @@
-#include "main.h"
+#include <stdio.h>
+#include <unistd.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * main - PID
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: Always 0.
  */
-int _putchar(char c)
+int main(void)
 {
-	return (write(1, &c, 1));
+    pid_t my_pid;
+
+    my_pid = getpid();
+    printf("Desire %u\n", my_pid);
+    my_pid = getppid();
+    printf("Ifeoma %u\n", my_pid);
+    return (0);
 }
